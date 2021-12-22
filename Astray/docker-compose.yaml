@@ -4,6 +4,6 @@ services:
     container_name: astray
     image: dannyelyankee/astray:v1
     ports:
-      - 8000:8000   
+      - 8081:8000
 
 
