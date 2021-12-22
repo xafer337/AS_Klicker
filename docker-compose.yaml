@@ -1,0 +1,8 @@
+web:
+  environment:
+    - ALLOW_OVERRIDE=true
+  ports:
+    - "82:80"
+  volumes:
+    - ./web:/var/www/html/
+  image: web
