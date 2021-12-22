@@ -2,9 +2,7 @@ version: '3'
 services:
   astray:
     container_name: astray
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: dannyelyankee/astray:v1
     ports:
       - 8000:8000   
 
