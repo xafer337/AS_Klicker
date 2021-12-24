@@ -1,9 +1,16 @@
-web:
-  environment:
-    - ALLOW_OVERRIDE=true
-  ports:
-    - "80:80"
-  volumes:
-    - ./web:/var/www/html/
-  image: php:7.2.2-apache
-  
+version: '3'
+services:
+  web:
+    environment:
+      - ALLOW_OVERRIDE=true
+    ports:
+      - "80:80"
+    volumes:
+      - ./web:/var/www/html/
+    image: php:7.2.2-apache
+
+  race:
+    container_name: race
+    image: xafer337/race
+    ports:
+      - 8083:8000
