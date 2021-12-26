@@ -1,0 +1,9 @@
+version: '3'
+services:
+        spaceinvader:
+                container_name: spaceinvader
+                build:
+                        context: .
+                        dockerfile: Dockerfile
+                ports:
+                        - 8084:8000
