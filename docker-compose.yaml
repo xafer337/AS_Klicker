@@ -33,7 +33,6 @@ services:
   spaceinvader:
     container_name: space_invader
     image: unaihernandez/spaceinvader:v1
-    container_name: spaceinvader
     ports:
       - 8084:8000
 
