@@ -9,8 +9,32 @@ services:
       - ./web:/var/www/html/
     image: php:7.2.2-apache
 
+  astray:
+    container_name: astray
+    image: dannyelyankee/astray:v1
+    ports:
+      - 8081:8000
+
+  tetris:
+    image: nginx
+    ports:
+      - 8082:80
+    volumes:
+      - /juego/git/AS_Clicker/tetris:/usr/share/nginx/html
+
   race:
     container_name: race
     image: xafer337/race
     ports:
       - 8083:8000
+
+  spaceinvader:
+    image: unaihernandez/spaceinvader:v1
+    container_name: spaceinvader
+    ports:
+      - 8084:8000
+
+  snake:
+    image: ivan1993spb/snake-server
+    ports:
+      - 8085:8080
