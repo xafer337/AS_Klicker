@@ -27,8 +27,8 @@ services:
   race:
     container_name: race
     image: xafer337/race
-#    ports:
-#      - 8083:8000
+    ports:
+      - 8083:8000
 
   spaceinvader:
     container_name: space_invader
@@ -54,7 +54,7 @@ services:
     volumes:
       - data_influx:/var/lib/influxdb
     ports:
-      - 8083:8086
+      - 8086:8086
 
 
 volumes:
