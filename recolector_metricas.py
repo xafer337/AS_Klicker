@@ -4,7 +4,7 @@ from datetime import datetime
 import subprocess
 import re
 def recolectar():
-    datos=subprocess.Popen(["sudo","docker","stats","--no-stream"],stdout=subprocess.PIPE)
+    datos=subprocess.Popen(["docker","stats","--no-stream"],stdout=subprocess.PIPE)
     output,err=datos.communicate()
 
     metricas = output.decode("utf-8").split("\n")
