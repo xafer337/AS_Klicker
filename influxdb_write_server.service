@@ -5,10 +5,10 @@ Description=Updatea cosas a la base de datos influx
 
 [Service]
 Type=simple
-#Restart=always
-#RestartSec=1
+Restart=always
+RestartSec=15
 User=influx_updater
-ExecStart=/usr/local/bin/influx_updater
+ExecStart=/usr/bin/python3 /usr/local/bin/recolector_metricas.py
 
 [Install]
 WantedBy=multi-user.target

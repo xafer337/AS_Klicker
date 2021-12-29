@@ -9,17 +9,14 @@ librerias:
 inicio:
 	@echo "Iniciando contenedores"
 	sudo docker-compose -f docker-compose.yaml up -d
-influx_user:
+influx_user: 
 	@echo "Creando usuario de sistema"
 	adduser --system --no-create-home --disabled-login --shell /bin/bash influx_updater
 	sudo usermod -aG docker influx_updater
-exec:
+exec: 
 	@echo "Ejecución periódica del servicio"
 	cp recolector_metricas.py /usr/local/bin
 	sudo chown influx_updater /usr/local/bin/recolector_metricas.py
-	cp influx_updater /usr/local/bin
-	sudo chown influx_updater /usr/local/bin/influx_updater
-	sudo chmod +x /usr/local/bin/influx_updater
 	cp influxdb_write_server.service /etc/systemd/system/
 	systemctl daemon-reload
 	systemctl start influxdb_write_server.service

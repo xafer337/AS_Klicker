@@ -1,7 +1,0 @@
-#!/bin/bash
-
-while true; do
-  python3 /usr/local/bin/recolector_metricas.py
-  sleep 15;
-done
-

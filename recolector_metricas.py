@@ -68,7 +68,7 @@ def subir_metricas(client, metricas):
 def main():
 
     # Creamos el cliente InfluxDB con la librería InfluxDBClient, aportándole los datos necesarios.
-    client = InfluxDBClient(host = 'influxDB', port = 8086, username = 'admin', password = 'admin', database = 'influx_db')
+    client = InfluxDBClient(host = 'localhost', port = 8086, username = 'admin', password = 'admin', database = 'influx_db')
     client.switch_database('influx_db') # equivalente a "USE influx_db"
     scrapeo = recolectar()
     subir_metricas(client, scrapeo)
