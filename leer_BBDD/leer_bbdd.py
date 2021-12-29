@@ -18,7 +18,7 @@ def main_loop():
     # Loop principal del programa
 
     # Creamos el cliente InfluxDB con la librería InfluxDBClient, aportándole los datos necesarios.
-    client = InfluxDBClient(host = 'influxDB', port = 8086, username = 'admin', password = 'admin', database = 'influx_db')
+    client = InfluxDBClient(host = 'localhost', port = 8086, username = 'admin', password = 'admin', database = 'influx_db')
     client.switch_database('influx_db') # equivalente a "USE influx_db"
     leer_comentarios(client)
 

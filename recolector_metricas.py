@@ -11,20 +11,21 @@ def recolectar():
     #metricas = output_splitted[1].split("  ")
     lista_dic = []
     i = 1
+
     while i < len(metricas)-1:
         datos_splitteados = metricas[i].split(' ')
         datos_limpios = limpiar_array(datos_splitteados)
         dic = {
             "nombre": datos_limpios[0],
-            "cpu": datos_limpios[1],
-            "mem_usada": datos_limpios[2],
-            "mem_limite": datos_limpios[3],
-            "mem_porcentaje": datos_limpios[4],
-            "net_input": datos_limpios[5],
-            "net_output": datos_limpios[6],
-            "block_input": datos_limpios[7],
-            "block_output": datos_limpios[8],
-            "pids": datos_limpios[9]
+            "cpu": float(datos_limpios[1]),
+            "mem_usada": float(datos_limpios[2]),
+            "mem_limite": float(datos_limpios[3]),
+            "mem_porcentaje": float(datos_limpios[4]),
+            "net_input": float(datos_limpios[5]),
+            "net_output": float(datos_limpios[6]),
+            "block_input": float(datos_limpios[7]),
+            "block_output": float(datos_limpios[8]),
+            "pids": int(datos_limpios[9])
         }
         lista_dic.append(dic)
         i+=1
