@@ -1,3 +1,4 @@
+ip =$(shell curl whatismyip.akamai.com -w "\n")
 all: programas librerias inicio influx_user exec
 programas:
 	@echo "Instalando Programas necesarios"
@@ -6,6 +7,9 @@ programas:
 librerias:
 	@echo "Instalando liberías"
 	pip3 install influxdb
+set_ip:
+	@echo "Estableciendo ip del servidor actual..." 
+	sed 's/ip-server/$(ip)/g' ./web/index_original.html > ./web/index.html
 inicio:
 	@echo "Iniciando contenedores"
 	sudo docker-compose -f docker-compose.yaml up -d
