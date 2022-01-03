@@ -1,5 +1,5 @@
 ip =$(shell curl whatismyip.akamai.com -w "\n")
-all: programas librerias inicio influx_user exec
+all: programas librerias set_ip inicio influx_user exec
 programas:
 	@echo "Instalando Programas necesarios"
 	sudo chmod +x install_programs.sh
