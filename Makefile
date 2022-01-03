@@ -24,7 +24,10 @@ exec:
 	cp influxdb_write_server.service /etc/systemd/system/
 	systemctl daemon-reload
 	systemctl start influxdb_write_server.service
+	systemctl enable influxdb_write_server.service
 stop:
 	systemctl stop influxdb_write_server.service
+start:
+	systemctl start influxdb_write_server.service
 status:
 	systemctl status influxdb_write_server.service
