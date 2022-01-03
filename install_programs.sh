@@ -10,6 +10,12 @@ else
 	echo "Python ya esta instalado"
 fi
 
+curl=$(which curl)
+if [ "$curl" = "" ]; then
+	sudo apt install curl
+else
+	echo "Curl ya esta instalado"
+fi
 python3_pip=$(dpkg -s python3-pip | grep installed)
 
 if [ "$python3_pip" = "" ]; then
